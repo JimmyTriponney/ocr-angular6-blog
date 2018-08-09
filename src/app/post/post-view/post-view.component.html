@@ -1,0 +1,14 @@
+<li class="list-group-item mt-2" [ngClass]="{'list-group-item-success': post.loveIt >= 0,
+                                        'list-group-item-danger': post.loveIt < 0}">
+  
+  <h4>{{ post.title }} <sub><i>({{post.loveIt}} <span *ngIf="post.loveIt >= 0">J'aime</span><span *ngIf="post.loveIt < 0">J'aime pas</span>)</i></sub></h4>
+
+  <p>{{ post.content }}</p>
+
+  <p>Autheur : <i>{{ post.author }}</i></p>
+
+  <button class="btn btn-sm btn-success" (click)="onAddLoveIt()">J'aime</button>
+  <button class="btn btn-sm btn-danger" (click)="onRemoveLoveIt()">J'aime pas</button>
+  <button class="btn btn-sm btn-danger delete-post" (click)="onRemove()">Supprimer ce post</button>
+
+</li>
